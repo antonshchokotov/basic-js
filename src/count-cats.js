@@ -1,5 +1,3 @@
 module.exports = function countCats(backyard /* matrix */) {
-  let count = 0;
-  backyard.forEach(row => row.forEach(el => count += /^\^\^$/.test(el) ? 1 : 0));
-  return count;
+  return backyard.flat().reduce((acc, i) => acc += /^\^\^$/.test(i) ? 1 : 0, 0);
 };
